@@ -1,12 +1,13 @@
 var cacheName = 'rpsv0.1';
+
 var filesToCache = [
-  '/',
-  '/index.html',
-  '/app.js',
-  '/styles.css',
-  '/images/rock.png',
-  '/images/paper.png',
-  '/images/scissor.png',
+  '/pwa-rps/',
+  '/pwa-rps/index.html',
+  '/pwa-rps/app.js',
+  '/pwa-rps/styles.css',
+  '/pwa-rps/images/rock.png',
+  '/pwa-rps/images/paper.png',
+  '/pwa-rps/images/scissor.png',
 ];
 
 self.addEventListener('install', function(e) {
