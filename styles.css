@@ -5,14 +5,17 @@
   box-sizing: border-box;
 }
 
+body {
+  background: lightgrey;
+}
 header {
-  background: navy;
+  background: #BD5D5D;
   padding: 20px;
 }
 
 
 header > h1 {
-  color: #24272E;
+  color: #75B575;
   text-align: center;
   font-family: 'Asap', sans-serif;
 }
@@ -30,23 +33,13 @@ header > h1 {
 }
 
 .badge {
-  background: red;
+  background: #BD5D5D;
   color: white;
   font-size: 14px;
-  padding: 2px, 14px;
+  padding: 10px, 20px;
 }
 
-#userlabel {
-  position: absolute;
-  top: 20px;
-  left: -20px;
-}
 
-#complabel {
-  position: absolute;
-  top: 20px;
-  right: -25px;
-}
 
 .result {
     font-size: 40px;
@@ -67,7 +60,7 @@ header > h1 {
   display: inline-block;
   border: 4px solid black;
   border-radius: 50%;
-  padding: 10px;
+  padding: 22px;
   margin-top: 0px 20px;
   transition: all 0.5s ease;
 }
@@ -96,4 +89,21 @@ header > h1 {
 .grey-glow {
   border: 4px solid lightgrey;
   box-shadow: 0 0 10px #31b43a;
+}
+
+
+#userlabel {
+  position: absolute;
+  top: 20px;
+  left: -20px;
+  padding: 5px;
+  border-radius: 6px;
+}
+
+#complabel {
+  position: absolute;
+  top: 20px;
+  right: -25px;
+  padding: 5px;
+  border-radius: 6px;
 }
