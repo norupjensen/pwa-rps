@@ -10,6 +10,18 @@ var filesToCache = [
   '/pwa-rps/images/scissor.png',
 ];
 
+/*
+var filesToCache = [
+  '/',
+  '/index.html',
+  '/app.js',
+  '/styles.css',
+  '/images/rock.png',
+  '/images/paper.png',
+  '/images/scissor.png',
+];
+*/
+
 self.addEventListener('install', function(e) {
   console.log('[ServiceWorker] Install');
   e.waitUntil(
@@ -35,11 +47,15 @@ self.addEventListener('activate', function(e) {
   return self.clients.claim();
 });
 
-self.addEventListener('fetch', function(e) {
-  console.log('[ServiceWorker] Fetch', e.request.url);
-  e.respondWith(
-    caches.match(e.request).then(function(response) {
-      return response || fetch(e.request);
-    })
-  );
+
+self.addEventListener('fetch', (event) => {
+  event.respondWith(async function() {
+    try {
+      console.log("trying to repsond, network first");
+      return await fetch(event.request);
+    } catch (err) {
+      console.log("responding with cache");
+      return caches.match(event.request);
+    }
+  }());
 });
